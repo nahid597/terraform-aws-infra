@@ -8,3 +8,4 @@
 *.hcl
 *.json
 *.txt
+.vscode
