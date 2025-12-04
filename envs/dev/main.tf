@@ -19,3 +19,14 @@ module "admin_user" {
   user_name  = "test-admin-user-1"
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
+
+// create s3 bucket
+module "aws_s3_bucket" {
+  source            = "../../modules/s3_bucket"
+  bucket_name       = "nahidh597-test-bucket-12345"
+  bucket_versioning = true
+  tag = {
+    Environment = "dev"
+    Project     = "terraform-aws-infra"
+  }
+}
